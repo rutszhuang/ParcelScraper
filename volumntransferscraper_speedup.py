@@ -98,7 +98,7 @@ for i in range(len(v)):
     elif "新洲美" in v[i]: y.append(v[i][w2-3:w2+1])
     else: y.append(v[i][w2-2:w2+4])
 
-# 導入段代碼
+# 導入 段代碼
 import csv
 import re
 d = open("documents/github/Project_volumntransfer/section.csv", "r")
