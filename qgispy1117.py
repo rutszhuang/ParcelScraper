@@ -46,7 +46,7 @@ vec_path= "/Users/erin/Documents/github/Project_volumntransfer/sectname/sectname
 # The format is:
 # vlayer = QgsVectorLayer(data_source, layer_name, provider_name)
 
-veclayer = QgsVectorLayer(vec_path, "section", "tpc")
+veclayer = QgsVectorLayer(vec_path, "section", "ogr")
 if not veclayer.isValid():
     print("Layer failed to load!")
 else:
@@ -56,18 +56,6 @@ for field in veclayer.fields():
     print(field.name(), field.typeName())
 
 print(veclayer.displayField())
-
-
-#This is where script breaks
-# qgis.utils.iface.setActiveLayer(veclayer)
-#iface.zoomToActiveLayer()
-
-###############################
-
-# write the project file
-project.write(project_path)
-
-
 
 # Finally, exitQgis() is called to remove the
 # provider and layer registries from memory

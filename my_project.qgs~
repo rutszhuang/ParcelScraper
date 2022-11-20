@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUserFull="Ju Tzu Huang" projectname="" version="3.22.12-Białowieża" saveUser="erin" saveDateTime="2022-11-20T19:14:35">
+<qgis projectname="" saveDateTime="2022-11-20T19:15:03" version="3.22.12-Białowieża" saveUser="erin" saveUserFull="Ju Tzu Huang">
   <homePath path=""/>
   <title></title>
   <autotransaction active="0"/>
@@ -22,15 +22,22 @@
     <customproperties>
       <Option/>
     </customproperties>
-    <custom-order enabled="0"/>
+    <layer-tree-layer name="section" legend_exp="" source="./sectname/sectname97-面-addcount.shp" legend_split_behavior="0" id="section_1dd69064_e5a0_4f16_8d05_f547f31568c4" patch_size="-1,-1" checked="Qt::Checked" providerKey="" expanded="1">
+      <customproperties>
+        <Option/>
+      </customproperties>
+    </layer-tree-layer>
+    <custom-order enabled="0">
+      <item>section_1dd69064_e5a0_4f16_8d05_f547f31568c4</item>
+    </custom-order>
   </layer-tree-group>
-  <snapping-settings unit="1" maxScale="0" enabled="0" scaleDependencyMode="0" mode="2" self-snapping="0" intersection-snapping="0" tolerance="12" minScale="0" type="1">
+  <snapping-settings enabled="0" maxScale="0" self-snapping="0" mode="2" minScale="0" unit="1" intersection-snapping="0" tolerance="12" scaleDependencyMode="0" type="1">
     <individual-layer-settings/>
   </snapping-settings>
   <relations/>
   <polymorphicRelations/>
-  <main-annotation-layer autoRefreshEnabled="0" refreshOnNotifyEnabled="0" autoRefreshTime="0" refreshOnNotifyMessage="" legendPlaceholderImage="" type="annotation">
-    <id>Annotations_8766cbde_d2f8_4093_a4b5_bb189ec06231</id>
+  <main-annotation-layer refreshOnNotifyMessage="" autoRefreshEnabled="0" autoRefreshTime="0" legendPlaceholderImage="" refreshOnNotifyEnabled="0" type="annotation">
+    <id>Annotations_935dad02_2d14_4b18_a75f_440dd600e0b9</id>
     <datasource></datasource>
     <keywordList>
       <value></value>
@@ -79,8 +86,120 @@
     <blendMode>0</blendMode>
     <paintEffect/>
   </main-annotation-layer>
-  <projectlayers/>
-  <layerorder/>
+  <projectlayers>
+    <maplayer geometry="Unknown geometry" labelsEnabled="0" hasScaleBasedVisibilityFlag="0" maxScale="0" simplifyMaxScale="1" simplifyAlgorithm="0" minScale="100000000" simplifyDrawingTol="1" autoRefreshTime="0" readOnly="0" simplifyDrawingHints="1" autoRefreshEnabled="0" wkbType="Unknown" refreshOnNotifyEnabled="0" type="vector" legendPlaceholderImage="" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" simplifyLocal="1" symbologyReferenceScale="-1">
+      <id>section_1dd69064_e5a0_4f16_8d05_f547f31568c4</id>
+      <datasource>./sectname/sectname97-面-addcount.shp</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>section</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt></wkt>
+          <proj4></proj4>
+          <srsid>0</srsid>
+          <srid>0</srid>
+          <authid></authid>
+          <description></description>
+          <projectionacronym></projectionacronym>
+          <ellipsoidacronym></ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
+      <vectorjoins/>
+      <layerDependencies/>
+      <dataDependencies/>
+      <expressionfields/>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <auxiliaryLayer/>
+      <metadataUrls/>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+        <Private>0</Private>
+      </flags>
+      <temporal accumulate="0" enabled="0" startExpression="" fixedDuration="0" limitMode="0" endExpression="" mode="0" startField="" endField="" durationField="" durationUnit="min">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <Option/>
+      </customproperties>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerOpacity>1</layerOpacity>
+      <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
+        <activeChecks type="StringList">
+          <Option value="" type="QString"/>
+        </activeChecks>
+        <checkConfiguration/>
+      </geometryOptions>
+      <referencedLayers/>
+      <fieldConfiguration/>
+      <aliases/>
+      <defaults/>
+      <constraints/>
+      <constraintExpressions/>
+      <expressionfields/>
+      <attributeactions/>
+      <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="">
+        <columns/>
+      </attributetableconfig>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <storedexpressions/>
+      <editform tolerant="1"></editform>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath></editforminitfilepath>
+      <editforminitcode><![CDATA[]]></editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <editable/>
+      <labelOnTop/>
+      <reuseLastValue/>
+      <dataDefinedFieldProperties/>
+      <widgets/>
+      <previewExpression></previewExpression>
+      <mapTip></mapTip>
+    </maplayer>
+  </projectlayers>
+  <layerorder>
+    <layer id="section_1dd69064_e5a0_4f16_8d05_f547f31568c4"/>
+  </layerorder>
   <properties>
     <Digitizing>
       <AvoidIntersectionsMode type="int">0</AvoidIntersectionsMode>
@@ -140,15 +259,15 @@
     <abstract></abstract>
     <links/>
     <author>Ju Tzu Huang</author>
-    <creation>2022-11-20T19:14:35</creation>
+    <creation>2022-11-20T19:15:03</creation>
   </projectMetadata>
   <Annotations/>
   <Layouts/>
   <Bookmarks/>
-  <ProjectViewSettings rotation="0" UseProjectScales="0">
+  <ProjectViewSettings UseProjectScales="0" rotation="0">
     <Scales/>
   </ProjectViewSettings>
-  <ProjectTimeSettings timeStepUnit="h" timeStep="1" frameRate="1" cumulativeTemporalRange="0"/>
+  <ProjectTimeSettings frameRate="1" cumulativeTemporalRange="0" timeStepUnit="h" timeStep="1"/>
   <ProjectDisplaySettings>
     <BearingFormat id="bearing">
       <Option type="Map">
