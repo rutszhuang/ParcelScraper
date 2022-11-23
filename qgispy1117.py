@@ -26,36 +26,36 @@ qgs = QgsApplication([], False)
 # Load providers
 qgs.initQgis()
 
-# Write your code here to load some layers, use processing
-# algorithms, etc.
-
-
-# From https://gis.stackexchange.com/questions/347407/using-iface-in-standalone-pyqgis-script
-
 # start a project
 project = QgsProject.instance()
-
 selectedcrs="EPSG:4326"
 target_crs = QgsCoordinateReferenceSystem()
 target_crs.createFromUserInput(selectedcrs)
 project.setCrs(target_crs)
 project_path = strProjectName
-vec_path= "/Users/erin/Documents/github/Project_volumntransfer/sectname/sectname97-面-addcount.shp"
+vec_path= "/Users/erin/Documents/github/Project_volumntransfer/sectname/sectname97-面.shp"
 ###############################
 
 # The format is:
 # vlayer = QgsVectorLayer(data_source, layer_name, provider_name)
 
-veclayer = QgsVectorLayer(vec_path, "section", "ogr")
-if not veclayer.isValid():
-    print("Layer failed to load!")
-else:
-    QgsProject.instance().addMapLayer(veclayer)
-
-for field in veclayer.fields():
+def AddVec(path, name, provider = "ogr"):
+    layer = QgsVectorLayer(path, name, provider)
+    if not layer.isValid():
+        print("Layer failed to load!")
+    else:
+        QgsProject.instance().addMapLayer(layer)
+        return layer
+section = AddVec(vec_path, "section")
+section.setProviderEncoding('big5')
+section.dataProvider().setEncoding('big5')
+for field in section.fields():
     print(field.name(), field.typeName())
 
-print(veclayer.displayField())
+
+# print(layer.displayField())
+
+
 
 # Finally, exitQgis() is called to remove the
 # provider and layer registries from memory
