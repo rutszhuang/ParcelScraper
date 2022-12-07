@@ -17,8 +17,8 @@ export DYLD_INSERT_LIBRARIES=/Applications/QGIS$QGIS_VERSION.app/Contents/MacOS/
 # check correct python bin is used
 echo "Using python3 from $(which python3)"
 
-# run start_app() from qgis.testing which uses initGUI(). Should print "Application state:..."
-# python3 -c "from qgis.testing import start_app; start_app()"
+# Run code
+# python3 "./volumntransferscraper.py"
 python3 "./qgispy1117.py"
 
 # restore and clean up
