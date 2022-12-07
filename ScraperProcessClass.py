@@ -7,9 +7,8 @@ class ScraperProcessClass:
     v = []
     y = []
     w = []
-    totalpages = 25
     
-    def __init__(self, urlslug, totalpages):
+    def __init__(self, urlslug, totalpages=25):
         self.totalpages = totalpages
         self.urlslug = urlslug
 

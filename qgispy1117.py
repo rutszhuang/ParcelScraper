@@ -4,9 +4,6 @@
 
 import os
 os.environ["PROJ_LIB"]="/Applications/QGIS-LTR.app/Contents/Resources/proj"
-import glob
-import os
-import sys
 from definitions import ROOT_DIR
 from qgis.core import *
 from qgis.gui import QgisInterface,QgsMapCanvas
