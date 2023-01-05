@@ -19,7 +19,7 @@ echo "Using python3 from $(which python3)"
 
 # run start_app() from qgis.testing which uses initGUI(). Should print "Application state:..."
 # python3 -c "from qgis.testing import start_app; start_app()"
-python3 "./qgispy1117.py"
+python3 "./main.py"
 
 # restore and clean up
 export PATH=$OLD_PATH

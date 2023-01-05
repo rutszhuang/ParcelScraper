@@ -5,8 +5,7 @@ problems i met: paging, \\n, split, replace, description to formating, import sc
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
-import concurrent.futures
-import shapefile
+
 start = time.time()
 print(start)
 PATH = "Documents/github/webscraper/chromedriver"
@@ -25,42 +24,43 @@ for i in range(1, totalpages+1):
     i += 1
 driver.close()
 
-p = str(data).split(",")
-q=[]
+rawdata = str(data).split(",")
+givenparcel=[]
 exception=[]
-for i in range(len(p)):
+for i in range(len(rawdata)):
     try:         
-        q.append((p[i].split("\\n"))[3])
+        givenparcel.append((rawdata[i].split("\\n"))[3])
     except:
-        exception.append(p[i].split("\\n"))
+        exception.append(rawdata[i].split("\\n"))
 
-r = str(q).replace("、", ",").replace("及", ",").replace(" ","").replace("'","").replace("[","").replace("]","")
-s = r.split(",")
-s1 = [] 
-for element in s:
-    if "北市" in element: s1.append(element.split("北市")[1])
-    else: s1.append(element)
 
-t = []
-for element in s1:
+splitnumber = str(givenparcel).replace("、", ",").replace("及", ",").replace(" ","").replace("'","").replace("[","").replace("]","").split(",")
+
+step4_cuthead = [] 
+for element in splitnumber:
+    if "北市" in element: step4_cuthead.append(element.split("北市")[1])
+    else: step4_cuthead.append(element)
+
+step5_cuttail = []
+for element in step4_cuthead:
     if "地" in element:
-        t.append(element.split("地")[0])
+        step5_cuttail.append(element.split("地")[0])
     elif "等" in element:
-        t.append(element.split("等")[0])
+        step5_cuttail.append(element.split("等")[0])
     elif "（" in element:
-        t.append(element.split("（")[0])
+        step5_cuttail.append(element.split("（")[0])
     elif "(" in element:
-        t.append(element.split("(")[0]) 
-    else: t.append(element)
+        step5_cuttail.append(element.split("(")[0]) 
+    else: step5_cuttail.append(element)
 
 u = []
-for n in range(len(t)):
-    if "段" not in t[n]:
+for n in range(len(step5_cuttail)):
+    if "段" not in step5_cuttail[n]:
         if "小段" in u[n-1]:
-            u.append(str(u[n-1]).split("小段")[0]+"小段"+t[n])
+            u.append(str(u[n-1]).split("小段")[0]+"小段"+step5_cuttail[n])
         else:
-            u.append(str(u[n-1]).split("段")[0]+"段"+t[n])
-    else: u.append(t[n])
+            u.append(str(u[n-1]).split("段")[0]+"段"+step5_cuttail[n])
+    else: u.append(step5_cuttail[n])
 
 v = []
 for n in range(len(u)):
@@ -108,14 +108,18 @@ for i in y:
         n.append(sectdict.get(i))
     else: continue
 from collections import Counter
-print(Counter(n))
+result = Counter(n)
 
-'''
-'''
+with open("documents/github/Project_volumntransfer/count.csv", "w") as d:
+    csvw = csv.writer(d, delimiter=",")
+    csvw.writerow(["section_code", "count"])
+    for key in result:
+        if result[key] is None:
+            result[key] = 0
+        csvw.writerow([key, result[key]])
 
 
 end = time.time()
 timepassed = end - start
 print("計時：%f 秒鐘" %timepassed)
 
-layer= shapefile.Reader("/Users/erin/Documents/github/Project_volumntransfer/sectname/sectname97-面.shp")

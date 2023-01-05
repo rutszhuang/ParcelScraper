@@ -6,25 +6,24 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 import concurrent.futures
-
 start = time.time()
+print(start)
 PATH = "Documents/github/webscraper/chromedriver"
 driver = webdriver.Chrome(PATH)
 totalpages = 3
+data = []
+def udddata(urls):
+    driver.get(urls) 
+    contents = driver.find_elements(By.CLASS_NAME, "col-md-6")
+    d = [content.text for content in contents]        
+    return d
 baseurl = "https://www.udd.gov.taipei/volumn-transfer/avdwckf"
 urls = [f"{baseurl}?page={i}" for i in range(1, totalpages+1)]
-data=[]
-def udddata(n):
-    driver.get(n)
-    contents = driver.find_elements(By.CLASS_NAME, "col-md-6")
-    d1 = [content.text for content in contents]
-    data.append(d1)
-    return
+
 with concurrent.futures.ThreadPoolExecutor(max_workers=50) as executor:
-    executor.map(udddata, urls)
-# print(data)
+    [data.append(result) for result in executor.map(udddata, urls)]
+
 driver.close()
-timecut = time.time()
 
 p = str(data).split(",")
 q=[]
@@ -53,14 +52,6 @@ for element in s1:
     elif "(" in element:
         t.append(element.split("(")[0]) 
     else: t.append(element)
-
-# print(len(p))
-# print(len(p[0]))
-# print(p)
-# print(p[0])
-# print(len(q))
-# print(len(q[0]))
-
 
 u = []
 for n in range(len(t)):
@@ -122,12 +113,7 @@ print(Counter(n))
 '''
 '''
 
+
 end = time.time()
-scrapertime = timecut - start
-processtime = end - timecut
 timepassed = end - start
-print("爬蟲計時：%f 秒鐘" %scrapertime)
-print("運算計時：%f 秒鐘" %processtime)
-print("總計時：%f 秒鐘" %timepassed)
-
-
+print("計時：%f 秒鐘" %timepassed)
