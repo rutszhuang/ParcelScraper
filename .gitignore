@@ -1,0 +1,13 @@
+__pycache__
+__pycache__/*
+my_project.qgs*
+statistics.csv
+results.csv
+count.csv
+parcellist.csv
+rawdata.csv
+speedup.py
+pyshp.py
+scraper.py
+volumntransferscraper_speedup.py
+volumntransferscraper.py
